@@ -12,12 +12,12 @@ public class PassengerTest {
     }
 
     @org.junit.Test
-    public void getName() {
+    public void canGetName() {
         assertEquals("Mary",passengerOne.getName());
     }
 
     @org.junit.Test
-    public void getBagNumber() {
+    public void canGetNumberOfBags() {
         assertEquals(1,passengerOne.getNumberOfBags());
     }
 }
