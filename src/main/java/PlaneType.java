@@ -2,7 +2,8 @@ public enum PlaneType {
 
     BOEING747(416, 333400.00),
     BOMBARDIERCRJ200(50, 24040.00),
-    AIRBUS350(410,254011.73);
+    AIRBUS350(410,254011.73),
+    PLANETEST(1,1000.00);
 
     private final int capacity;
     private final double maxTakeoffWeight;
