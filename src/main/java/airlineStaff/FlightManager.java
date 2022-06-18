@@ -25,4 +25,9 @@ public class FlightManager extends AirlineStaff {
         }
         return totalBaggageWeight*10;
     }
+
+    public int calculateRemainingBaggageWeightPerFlight(Flight flight) {
+        double remainingBaggageWeight = this.calculateBaggageAllowancePerFlight(flight) - this.calculateTotalBaggageBookedPerFlight(flight);
+        return (int) Math.floor(remainingBaggageWeight);
+    }
 }
