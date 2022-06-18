@@ -24,4 +24,9 @@ public class CabinCrewMemberTest {
         assertEquals("First Officer",rachel.getRankName());
     }
 
+    @Test
+    public void canRelayMessage() {
+        assertEquals("We'll be landing in 30 minutes.", rachel.relayMessage("We'll be landing in 30 minutes."));
+    }
+
 }

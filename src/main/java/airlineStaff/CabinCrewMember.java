@@ -6,4 +6,7 @@ public class CabinCrewMember extends AirlineStaff {
         super(name, rank);
     }
 
+    public String relayMessage(String message) {
+        return message;
+    }
 }
