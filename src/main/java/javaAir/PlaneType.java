@@ -1,6 +1,6 @@
 package javaAir;
 
-public enum PlaneType {
+public enum     PlaneType {
 
     BOEING747(416, 333400.00),
     BOMBARDIERCRJ200(50, 24040.00),
