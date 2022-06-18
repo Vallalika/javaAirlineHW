@@ -8,9 +8,13 @@ public class FlightManager extends AirlineStaff {
         super(name, rank);
     }
 
-    public int calculateFlightBaggageAllowance(Flight flight) {
+    public double calculateBaggageAllowancePerFlight(Flight flight) {
         double baggageAllowancePerFlight = flight.getPlane().getMaxWeight()/2;
-        double baggageWeightPerPassenger = baggageAllowancePerFlight / flight.getPlane().getMaxCapacity();
+        return baggageAllowancePerFlight;
+    }
+
+    public int calculateBaggageAllowancePerPassenger(Flight flight) {
+        double baggageWeightPerPassenger = calculateBaggageAllowancePerFlight(flight) / flight.getPlane().getMaxCapacity();
         return (int) Math.floor(baggageWeightPerPassenger);
     }
 
