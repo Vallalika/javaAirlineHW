@@ -1,6 +1,12 @@
+package javaAirTest;
+
 import airlineStaff.CabinCrewMember;
 import airlineStaff.Pilot;
 import airlineStaff.Rank;
+import javaAir.Flight;
+import javaAir.Passenger;
+import javaAir.Plane;
+import javaAir.PlaneType;
 import org.junit.Before;
 import org.junit.Test;
 

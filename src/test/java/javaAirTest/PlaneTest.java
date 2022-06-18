@@ -1,3 +1,7 @@
+package javaAirTest;
+
+import javaAir.Plane;
+import javaAir.PlaneType;
 import org.junit.Before;
 import org.junit.Test;
 

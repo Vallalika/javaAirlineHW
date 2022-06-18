@@ -1,5 +1,7 @@
-package airlineStaff;
+package airlineStaffTest;
 
+import airlineStaff.Pilot;
+import airlineStaff.Rank;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,7 +13,7 @@ public class PilotTest {
 
     @Before
     public void before() {
-        pilotOne = new Pilot("Martyna",Rank.CAPTAIN,"OSS117");
+        pilotOne = new Pilot("Martyna", Rank.CAPTAIN,"OSS117");
     }
 
     @Test

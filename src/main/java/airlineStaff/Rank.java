@@ -4,8 +4,8 @@ public enum Rank {
     CAPTAIN("Captain"),
     FIRST_OFFICER("First Officer"),
     PURSER("Purser"),
-    FLIGHT_ATTENDANT("Flight attendant"),
-    FLIGHT_MANAGER("Flight manager");
+    FLIGHT_ATTENDANT("javaAir.Flight attendant"),
+    FLIGHT_MANAGER("javaAir.Flight manager");
 
     private final String rankName;
 

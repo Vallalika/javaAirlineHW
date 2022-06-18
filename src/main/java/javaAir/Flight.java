@@ -1,3 +1,5 @@
+package javaAir;
+
 import airlineStaff.CabinCrewMember;
 import airlineStaff.Pilot;
 
@@ -75,7 +77,7 @@ public class Flight {
     public String bookPassenger(Passenger passenger) {
         if (!this.isFull()) {
             this.passengers.add(passenger);
-            return "Passenger "+passenger.getName()+" is now booked on flight "+this.flightNumber;
+            return "javaAir.Passenger "+passenger.getName()+" is now booked on flight "+this.flightNumber;
         } else {
             return "Could not book passenger "+passenger.getName()+" on flight "+this.flightNumber+". This flight is full.";
         }
