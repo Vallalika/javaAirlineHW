@@ -85,6 +85,11 @@ public class FlightTest {
     }
 
     @Test
+    public void hasAvailableSeats () {
+        assertEquals(410,flight001.getAvailableSeatNumbers().size());
+    }
+
+    @Test
     public void canGetDepartureAirport () {
         assertEquals("EDI", flight001.getDepartureAirport());
     }

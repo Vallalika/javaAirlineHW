@@ -12,6 +12,7 @@ public class Flight {
     private Pilot pilot;
     private ArrayList<CabinCrewMember> cabinCrewMembers;
     private ArrayList<Passenger> passengers;
+    private ArrayList<Integer> availableSeatNumbers;
     private Plane plane;
     private String flightNumber;
     private String destination;
@@ -27,6 +28,7 @@ public class Flight {
         this.destination = destination;
         this.departureAirport = departureAirport;
         this.departureTime = departureTime;
+        this.availableSeatNumbers = generateAvailableSeatNumbers();
     }
 
     public Pilot getPilot() {
@@ -65,6 +67,10 @@ public class Flight {
         this.cabinCrewMembers.add(cabinCrewMember);
     }
 
+    public ArrayList<Integer> getAvailableSeatNumbers() {
+        return this.availableSeatNumbers;
+    }
+
     public int getAvailableSeats() {
         if (!isFull()) {
             int planeCapacity = this.getPlane().getMaxCapacity();
@@ -74,13 +80,14 @@ public class Flight {
         } else {
             return 0;
         }
-        }
+    }
 
     public String bookPassenger(Passenger passenger) {
         if (!this.isFull()) {
             this.passengers.add(passenger);
             passenger.setFlight(this);
             passenger.setSeat(this.generateSeat());
+
             return "javaAir.Passenger "+passenger.getName()+" is now booked on flight "+this.flightNumber;
         } else {
             return "Could not book passenger "+passenger.getName()+" on flight "+this.flightNumber+". This flight is full.";
@@ -95,11 +102,31 @@ public class Flight {
         }
     }
 
+    public ArrayList generateAvailableSeatNumbers() {
+        ArrayList generatedSeats = new ArrayList();
+        int totalNumberOfSeats = this.plane.getMaxCapacity();
+        for (int newSeat = 1; newSeat <= totalNumberOfSeats; newSeat++) {
+            generatedSeats.add(newSeat);
+        }
+        return generatedSeats;
+    }
+
     public Integer generateSeat() {
+        int randomIndex;
         int generatedSeat;
-        Random seatGenerator = new Random();
-        generatedSeat = seatGenerator.nextInt(this.plane.getMaxCapacity());
-        generatedSeat = new Integer(generatedSeat);
+
+        // Create instance of random generator
+        Random indexGenerator = new Random();
+
+        // Generate random index from seat arrayList
+        randomIndex = indexGenerator.nextInt(this.getAvailableSeatNumbers().size());
+
+        // Get seat number from arrayList using random index
+        generatedSeat = new Integer(this.getAvailableSeatNumbers().get(randomIndex));
+
+        // Delete seat number from list
+        this.availableSeatNumbers.remove(randomIndex);
+
         return generatedSeat;
     }
 }
