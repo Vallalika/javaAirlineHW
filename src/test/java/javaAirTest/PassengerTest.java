@@ -64,4 +64,9 @@ public class PassengerTest {
         passengerOne.setFlight(flight001);
         assertEquals(flight001,passengerOne.getFlight());
     }
+
+    @Test
+    public void startsWithNoSeat() {
+        assertEquals(null,passengerOne.getSeat());
+    }
 }
