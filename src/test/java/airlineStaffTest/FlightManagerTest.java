@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 
@@ -24,6 +25,7 @@ public class FlightManagerTest {
     ArrayList<CabinCrewMember> cabinCrewMembers;
     Passenger passengerOne;
     Passenger passengerTwo;
+    Date departureTime;
 
     @Before
     public void before() {
@@ -39,7 +41,8 @@ public class FlightManagerTest {
         cabinCrewMembers.add(simon);
         passengerOne = new Passenger("Mary", 1);
         passengerTwo = new Passenger("Anna", 5);
-        flight001 = new Flight(martynaThePilot, cabinCrewMembers, myAwesomePlane, "FRXXX", "Paris", "EDI", "9:57");
+        departureTime = new Date();
+        flight001 = new Flight(martynaThePilot, cabinCrewMembers, myAwesomePlane, "FRXXX", "Paris", "EDI", departureTime);
     }
 
     @Test
