@@ -5,6 +5,7 @@ import airlineStaff.Pilot;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Random;
 
 public class Flight {
 
@@ -79,6 +80,7 @@ public class Flight {
         if (!this.isFull()) {
             this.passengers.add(passenger);
             passenger.setFlight(this);
+            passenger.setSeat(this.generateSeat());
             return "javaAir.Passenger "+passenger.getName()+" is now booked on flight "+this.flightNumber;
         } else {
             return "Could not book passenger "+passenger.getName()+" on flight "+this.flightNumber+". This flight is full.";
@@ -93,4 +95,11 @@ public class Flight {
         }
     }
 
+    public Integer generateSeat() {
+        int generatedSeat;
+        Random seatGenerator = new Random();
+        generatedSeat = seatGenerator.nextInt(this.plane.getMaxCapacity());
+        generatedSeat = new Integer(generatedSeat);
+        return generatedSeat;
+    }
 }

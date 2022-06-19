@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class FlightTest {
 
@@ -115,6 +116,18 @@ public class FlightTest {
     public void canAssignFlightToPassenger() {
         flight001.bookPassenger(passengerOne);
         assertEquals(flight001,passengerOne.getFlight());
+    }
+
+    @Test
+    public void canGenerateSeat() {
+        int generatedSeat = flight001.generateSeat();
+        assertNotNull(generatedSeat);
+    }
+
+    @Test
+    public void canAssignRandomSeatToPassengerOnBooking() {
+        flight001.bookPassenger(passengerOne);
+        assertNotNull(passengerOne.getSeat());
     }
 
     @Test

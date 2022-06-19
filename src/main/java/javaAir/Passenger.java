@@ -34,4 +34,8 @@ public class Passenger {
     public Integer getSeat() {
         return this.seat;
     }
+
+    public void setSeat(Integer seatNumber) {
+        this.seat = seatNumber;
+    }
 }

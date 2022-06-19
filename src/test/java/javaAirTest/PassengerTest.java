@@ -69,4 +69,11 @@ public class PassengerTest {
     public void startsWithNoSeat() {
         assertEquals(null,passengerOne.getSeat());
     }
+
+    @Test
+    public void canSetSeat() {
+        Integer seatNumber = new Integer(27);
+        passengerOne.setSeat(seatNumber);
+        assertEquals(seatNumber,passengerOne.getSeat());
+    }
 }
