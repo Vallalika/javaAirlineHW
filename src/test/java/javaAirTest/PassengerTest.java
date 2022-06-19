@@ -19,10 +19,29 @@ import static org.junit.Assert.*;
 public class PassengerTest {
 
     Passenger passengerOne;
+    Flight flight001;
+    Pilot martynaThePilot;
+    CabinCrewMember rachel;
+    CabinCrewMember greg;
+    CabinCrewMember simon;
+    Plane myAwesomePlane;
+    ArrayList<CabinCrewMember> cabinCrewMembers;
+    Date departureTime;
 
     @Before
     public void before() {
         passengerOne = new Passenger("Mary", 1);
+        martynaThePilot = new Pilot("Martyna", Rank.CAPTAIN, "OSS117");
+        rachel = new CabinCrewMember("Rachel", Rank.FIRST_OFFICER);
+        greg = new CabinCrewMember("Greg", Rank.PURSER);
+        simon = new CabinCrewMember("Simon", Rank.FLIGHT_ATTENDANT);
+        myAwesomePlane = new Plane(PlaneType.AIRBUS350);
+        cabinCrewMembers = new ArrayList<>();
+        cabinCrewMembers.add(rachel);
+        cabinCrewMembers.add(greg);
+        cabinCrewMembers.add(simon);
+        departureTime = new Date();
+        flight001 = new Flight(martynaThePilot, cabinCrewMembers, myAwesomePlane, "FR756", "Paris", "EDI", departureTime);
     }
 
     @Test
@@ -38,5 +57,11 @@ public class PassengerTest {
     @Test
     public void startsWithNoFlight() {
         assertEquals(null,passengerOne.getFlight());
+    }
+
+    @Test
+    public void canSetFlight(){
+        passengerOne.setFlight(flight001);
+        assertEquals(flight001,passengerOne.getFlight());
     }
 }

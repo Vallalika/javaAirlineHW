@@ -70,7 +70,7 @@ public class Flight {
             int numberOfPassengers = this.getPassengers().size();
             int numberOfSeatsAvailable = planeCapacity - numberOfPassengers;
             return numberOfSeatsAvailable;
-        } else{
+        } else {
             return 0;
         }
         }
@@ -78,6 +78,7 @@ public class Flight {
     public String bookPassenger(Passenger passenger) {
         if (!this.isFull()) {
             this.passengers.add(passenger);
+            passenger.setFlight(this);
             return "javaAir.Passenger "+passenger.getName()+" is now booked on flight "+this.flightNumber;
         } else {
             return "Could not book passenger "+passenger.getName()+" on flight "+this.flightNumber+". This flight is full.";
@@ -91,4 +92,5 @@ public class Flight {
             return false;
         }
     }
+
 }

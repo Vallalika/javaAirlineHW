@@ -112,6 +112,12 @@ public class FlightTest {
     }
 
     @Test
+    public void canAssignFlightToPassenger() {
+        flight001.bookPassenger(passengerOne);
+        assertEquals(flight001,passengerOne.getFlight());
+    }
+
+    @Test
     public void canTellIfFlightIsFull() {
         flightTest.bookPassenger(passengerOne);
         assertEquals(true,flightTest.isFull());
